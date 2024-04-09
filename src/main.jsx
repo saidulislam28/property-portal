@@ -4,12 +4,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
+import WebLogo from './assets/propertyPortalLogo.png';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <div><img src={WebLogo} alt="" /></div>
   },
 ]);
 
