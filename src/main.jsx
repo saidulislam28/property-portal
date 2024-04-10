@@ -4,18 +4,52 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import WebLogo from './assets/propertyPortalLogo.png';
+
+import Root from './routes/Root';
+import Home from './routes/Home';
+import About from './routes/About';
+import UpdateProfile from './routes/UpdateProfile';
+import Login from './routes/Login';
+import Register from './routes/Register';
+import AuthProvider from './providers/AuthProvider';
 
 const router = createBrowserRouter([
+
   {
     path: "/",
-    element: <div><img src={WebLogo} alt="" /></div>
+    element:<Root></Root>,
+    children:[
+      {
+        path:"/",
+        element:<Home></Home>
+      },
+      {
+        path: "/about",
+        element:<About></About>
+      },
+      {
+        path: "/profile",
+        element:<UpdateProfile></UpdateProfile>
+      },
+      {
+        path:"/login",
+        element:<Login></Login>
+      },
+      {
+        path:"/register",
+        element:<Register></Register>
+      }
+    ]
   },
 ]);
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+    <RouterProvider router={router} ></RouterProvider>
+
+    </AuthProvider>
+    
   </React.StrictMode>
 );

@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Modern Office Building",
+    "segment_name": "Commercial",
+    "description": "A state-of-the-art office building with contemporary architecture.",
+    "price": "$5,000,000",
+    "status": "sale",
+    "area": "10,000 sq ft",
+    "location": "Downtown Business District",
+    "facilities": ["Conference rooms", "Cafeteria", "Parking garage"],
+    "image": "https://media.istockphoto.com/id/182444113/photo/office-building-exteriors.jpg?s=1024x1024&w=is&k=20&c=bRai-rxK6PChgsc7ig2-H331bPnJ-FQsxjp5YZ0Mo4c=",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 2,
+    "estate_title": "Retail Space in Shopping Mall",
+    "segment_name": "Commercial",
+    "description": "Prime retail space located in a bustling shopping mall.",
+    "price": "$10,000/month",
+    "status": "rent",
+    "area": "2,500 sq ft",
+    "location": "City Center Mall",
+    "facilities": ["Storefront windows", "Storage room", "Restroom"],
+    "image": "https://media.istockphoto.com/id/1012166962/photo/empty-shopping-centre-in-sunset-dubai.jpg?s=1024x1024&w=is&k=20&c=H0P8-xxxqhmAqLZ7fTIh2Zy0-lseejZBwN718YuOi_Y=",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 3,
+    "estate_title": "Warehouse and Distribution Center",
+    "segment_name": "Commercial",
+    "description": "Spacious warehouse facility suitable for distribution operations.",
+    "price": "$3,500,000",
+    "status": "sale",
+    "area": "20,000 sq ft",
+    "location": "Industrial Park",
+    "facilities": ["Loading docks", "Office space", "Security system"],
+    "image": "https://images.unsplash.com/photo-1665971819560-b162dd7b90b3?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 4,
+    "estate_title": "Industrial Facility",
+    "segment_name": "Commercial",
+    "description": "Versatile industrial facility with flexible floor plan.",
+    "price": "$7,500,000",
+    "status": "sale",
+    "area": "15,000 sq ft",
+    "location": "Industrial Zone",
+    "facilities": ["Manufacturing area", "Warehouse space", "Truck access"],
+    "image": "https://plus.unsplash.com/premium_photo-1677323396129-0a5d464eb491?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 5,
+    "estate_title": "Fine Dining Restaurant",
+    "segment_name": "Commercial",
+    "description": "Upscale restaurant offering fine dining experience.",
+    "price": "$2,000,000",
+    "status": "sale",
+    "area": "5,000 sq ft",
+    "location": "Downtown",
+    "facilities": ["Dining area", "Full kitchen", "Bar"],
+    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 6,
+    "estate_title": "Entertainment Venue",
+    "segment_name": "Commercial",
+    "description": "Dynamic entertainment venue suitable for live performances and events.",
+    "price": "$15,000/month",
+    "status": "rent",
+    "area": "8,000 sq ft",
+    "location": "Entertainment District",
+    "facilities": ["Stage", "VIP lounge", "Sound system"],
+    "image": "https://images.unsplash.com/photo-1561114601-81d07393ee3d?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "view_property_button": "View Property"
+  },
+  {
+    "id": 7,
+    "estate_title": "Commercial Office Tower",
+    "segment_name": "Commercial",
+    "description": "Iconic office tower offering premium office spaces.",
+    "price": "$100,000,000",
+    "status": "sale",
+    "area": "100,000 sq ft",
+    "location": "Financial District",
+    "facilities": ["High-speed elevators", "Executive suites", "Fitness center"],
+    "image": "https://media.istockphoto.com/id/911607890/photo/business-office-building-in-london.jpg?s=1024x1024&w=is&k=20&c=VXmMVnpFzXylnvd4R-TabsjAS3aD9GsIUdl8sobxvsg=",
+    "view_property_button": "View Property"
+  }
+]
