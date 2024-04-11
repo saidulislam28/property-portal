@@ -12,6 +12,8 @@ import UpdateProfile from './routes/UpdateProfile';
 import Login from './routes/Login';
 import Register from './routes/Register';
 import AuthProvider from './providers/AuthProvider';
+import DetailsOfData from './component/DetailsOfData';
+import PrivateRoutes from './routes/PrivateRoutes';
 
 const router = createBrowserRouter([
 
@@ -21,7 +23,13 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader: () => fetch('/data.json')
+      },
+      {
+        path: "/data/:id",
+        element:<PrivateRoutes><DetailsOfData></DetailsOfData></PrivateRoutes>
+
       },
       {
         path: "/about",
