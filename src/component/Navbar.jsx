@@ -34,7 +34,7 @@ const navLinks = ( <>
          style={({ isActive }) => ({
           color: isActive ? '#fff' : '',
           background: isActive ? '#7600dc' : '',
-        })}>Update Profile</NavLink>
+        })}>Profile</NavLink>
       </li>
     </>
   );
