@@ -3,44 +3,49 @@ import "./navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
 
-  const {user , logOut} = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut().then().catch();
+  };
 
-const handleLogOut = () =>{
-logOut()
-.then()
-.catch()
-}
-
-
-
-const navLinks = ( <>
+  const navLinks = (
+    <>
       <li>
-        <NavLink to="/"
-         style={({ isActive }) => ({
-          color: isActive ? '#fff' : '#545e6f',
-          background: isActive ? '#7600dc' : '#f0f0f0',
-        })}>Home</NavLink>
+        <NavLink
+          to="/"
+          style={({ isActive }) => ({
+            color: isActive ? "#fff" : "#545e6f",
+            background: isActive ? "#7600dc" : "#f0f0f0",
+          })}
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/about"
-         style={({ isActive }) => ({
-          color: isActive ? '#fff' : '',
-          background: isActive ? '#7600dc' : '',
-        })}>About Us</NavLink>
+        <NavLink
+          to="/about"
+          style={({ isActive }) => ({
+            color: isActive ? "#fff" : "",
+            background: isActive ? "#7600dc" : "",
+          })}
+        >
+          About Us
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/profile"
-         style={({ isActive }) => ({
-          color: isActive ? '#fff' : '',
-          background: isActive ? '#7600dc' : '',
-        })}>Profile</NavLink>
+        <NavLink
+          to="/profile"
+          style={({ isActive }) => ({
+            color: isActive ? "#fff" : "",
+            background: isActive ? "#7600dc" : "",
+          })}
+        >
+          Profile
+        </NavLink>
       </li>
     </>
   );
-
-
-
 
   return (
     <div className="navbar bg-base-100  container mx-auto">
@@ -80,32 +85,33 @@ const navLinks = ( <>
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-      
-      {
-        user ?
-        <div className="flex items-center">
-          <div
-        tabIndex={0}
-        role="button"
-        className="btn btn-ghost btn-circle avatar mr-4">
-        <div className="w-10 rounded-full">
-          <img
-            alt="Tailwind CSS Navbar component"
-            src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-          />
-        </div>
-        </div>
-        <button onClick={handleLogOut} className="btn btn-primary">Logout</button>
-        </div>
-     
-        :
-        
-        <Link to="/login"><p className="btn">Login</p></Link>
-      }
-      
-      
-      
-      
+        {user ? (
+          <div className="flex items-center">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar mr-4 tooltip tooltip-bottom"
+              data-tip={user.displayName}
+            >
+              <div className="rounded-full">
+                <img alt={user.displayName} src={user.photoURL} />
+              </div>
+            </div>
+            <button onClick={handleLogOut} className="btn btn-primary">
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center gap-2">
+            <Link to="/register">
+              <p className="btn btn-secondary">Register</p>
+            </Link>
+
+            <Link to="/login">
+              <p className="btn  btn-accent">Login</p>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,11 +1,19 @@
 import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  TwitterAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 import { signOut } from "firebase/auth/cordova";
+
+
+
 
 export const AuthContext = createContext(null);
 
@@ -15,25 +23,62 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
 
+//  social providers 
+
+const googleProvider = new GoogleAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+const githubProvider = new GithubAuthProvider();
+
+
+
   const registerUser = (email, password) => {
     setLoading(true)
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password );
   };
 
-
-  const logOut = () => {
-    setLoading(true)
-    return signOut(auth);
+  const updateProfileInfo = (name, photo) =>{
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+     photoURL: photo
+    })
+  
   }
+
 
   const LogIn = (email, password) =>{
     setLoading(true);
     return signInWithEmailAndPassword(auth, email , password)
   }
 
+  // google Login with firebase
+  const googleLogin = () =>{
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider)
+  }
+  // twitter login 
+  const twitterLogin = () =>{
+    setLoading(true);
+    return signInWithPopup(auth, twitterProvider);
+
+  }
+  // github login
+
+  const githubLogin = () => {
+    setLoading(true);
+    return signInWithPopup(auth, githubProvider)
+  }
+
+  const logOut = () => {
+    setLoading(true)
+    return signOut(auth);
+  }
+
+  
+
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // console.log("use in auth chnge", currentUser);
+      
       setUser(currentUser);
       setLoading(false);
     });
@@ -46,8 +91,13 @@ const AuthProvider = ({ children }) => {
     user,
     loading,
     registerUser,
+    updateProfileInfo,
+    googleLogin,
+    twitterLogin,
+    githubLogin,
     LogIn,
-    logOut
+    logOut,
+    setLoading
   };
 
   return (

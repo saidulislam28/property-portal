@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import {  toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import PageTitle from "../component/PageTitle";
 
 const Register = () => {
 
-const {registerUser} = useContext(AuthContext);
+
+const {registerUser , updateProfileInfo} = useContext(AuthContext);
 
 
   const handleRegister = e =>{
@@ -13,33 +17,42 @@ const {registerUser} = useContext(AuthContext);
     const name = form.get('name');
     const email = form.get('email');
     const password = form.get('password');
-    const photoUrl = form.get('photo');
+    const photo = form.get('photo');
    
+    
+  
    
-   
-   
-    console.log(email,password, photoUrl, name);
-
+    
     registerUser(email,password)
     .then(result =>{
+      toast("Successfully Registered")
       console.log(result.user);
+      updateProfileInfo(name, photo)
+      .then()
+      .catch(error =>{
+        console.log(error);
+      })
     })
     .catch(error => {
+      toast.error("Something Went wrong")
       console.log(error);
     })
-
-
+    
+    
+    console.log(email,password, photo, name);
 
   
   }
+
 
   return (
     <form
      onSubmit={handleRegister}
       className=" md:w-3/4 lg:w-1/2 border rounded-2xl p-4 mx-auto my-10"
     >
+       <PageTitle title="pPortal-register"></PageTitle>
       <p className="text-3xl text-center mb-4 font-bold text-primary underline">
-        Please Login
+        Please Register
       </p>
       <div className="form-control">
         <label className="label">
@@ -98,10 +111,8 @@ const {registerUser} = useContext(AuthContext);
         <button className="btn btn-primary">Register</button>
       </div>
       <p>
-        Do not have an account ? please
-        <Link className="text-primary underline text-center" to="/login">
-          
-         Login
+        Do not have an account ? please 
+        <Link className="text-primary underline text-center font-semibold" to="/login">  Login
         </Link>
       </p>
     </form>
