@@ -1,16 +1,22 @@
-import {useParams} from "react-router-dom";
+import {useLoaderData,useParams} from "react-router-dom";
 import PageTitle from "./PageTitle";
-// import SingleData from "./SingleData";
+
 const DetailsOfData = () => {
-const {id} = useParams();
+
+  
+   
+    const {id,estate_title,segment_name,description,price,status,location,facilities,image} = useParams();
+
+    console.log(segment_name, description);
   return (
     <div>
        <PageTitle title="pPortal-details"></PageTitle>
+       <h1>{description}</h1>
+       <h1 className="text-8xl">{id}</h1>
+       
+       
 
-
-
-      <h2 className="text-5xl">data details {id}</h2>
-      {/* <SingleData></SingleData> */}
+      
     </div>
   );
 };

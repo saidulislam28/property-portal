@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <li>
+      <li className="mr-2 font-bold">
         <NavLink
           to="/"
           style={({ isActive }) => ({
@@ -22,7 +22,7 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
+      <li className="mr-2 font-bold">
         <NavLink
           to="/about"
           style={({ isActive }) => ({
@@ -33,7 +33,8 @@ const Navbar = () => {
           About Us
         </NavLink>
       </li>
-      <li>
+      {
+        user ? <li className="font-bold">
         <NavLink
           to="/profile"
           style={({ isActive }) => ({
@@ -43,7 +44,8 @@ const Navbar = () => {
         >
           Profile
         </NavLink>
-      </li>
+      </li> : ""
+      }
     </>
   );
 

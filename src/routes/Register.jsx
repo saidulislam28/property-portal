@@ -5,6 +5,9 @@ import {  toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from "../component/PageTitle";
 
+const uppercaseRegex = /[A-Z]/;
+  const lowercaseRegex = /[a-z]/;
+
 const Register = () => {
 
 
@@ -20,7 +23,17 @@ const {registerUser , updateProfileInfo} = useContext(AuthContext);
     const photo = form.get('photo');
    
     
+    if(!uppercaseRegex.test(password)){
+      return alert('boro de')
+    }
+    if(!lowercaseRegex.test(password)){
+      return alert('choto de')
+    }
+    if(password.length <6){
+      return alert('6 da hoy nai ')
   
+    }
+    
    
     
     registerUser(email,password)
@@ -37,6 +50,7 @@ const {registerUser , updateProfileInfo} = useContext(AuthContext);
       toast.error("Something Went wrong")
       console.log(error);
     })
+    e.target.reset();
     
     
     console.log(email,password, photo, name);

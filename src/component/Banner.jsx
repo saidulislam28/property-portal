@@ -3,7 +3,7 @@ const Banner = () => {
   return (
     <div>
       <div className="container mx-auto">
-      <div className="carousel w-full rounded-xl h-full lg:h-96">
+      <div className="carousel w-full rounded-xl h-full lg:h-[550px]">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://images.unsplash.com/photo-1564069114553-7215e1ff1890?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -62,6 +62,7 @@ const Banner = () => {
         </div>
       </div>
     </div>
+    
     </div>
   );
 };

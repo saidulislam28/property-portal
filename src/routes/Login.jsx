@@ -28,6 +28,7 @@ const Login = () => {
         console.log(error);
         toast.error("something went wrong");
       });
+      e.target.reset();
   };
 
   const handleSocialLogin = provider => {

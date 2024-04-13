@@ -2,6 +2,8 @@ import Banner from "../component/Banner";
 import { useLoaderData } from "react-router-dom";
 import SingleData from "../component/SingleData";
 import PageTitle from "../component/PageTitle";
+import Gallery from "../component/Gallery";
+import SlidingMarque from "../component/SlidingMarque";
 
 const Home = () => {
   const aData = useLoaderData();
@@ -11,6 +13,10 @@ const Home = () => {
        <PageTitle title="pPortal-home"></PageTitle>
 
       <Banner></Banner>
+      <SlidingMarque></SlidingMarque>
+
+      <Gallery></Gallery>
+      <div className="border mt-10 rounded-2xl">
 
       <div>
         <h1 className="text-5xl my-10 text-center font-extrabold">
@@ -26,6 +32,8 @@ const Home = () => {
           <SingleData key={data.id} data={data}></SingleData>
         ))}
       </div>
+      </div>
+
     </div>
   );
 };

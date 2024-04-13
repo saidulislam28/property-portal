@@ -10,6 +10,9 @@ const SingleData = ({data}) => {
       <h2 className="card-title text-orange-300 ">{data.estate_title}</h2>
       <p className="text-orange-100">{data.description.slice(0, 60)}</p>
       <p className="font-bold">Price : <span className="text-orange-300 font-semibold">{data.price}</span> </p>
+      <p className="font-bold">Area : <span className="text-orange-300 font-semibold">{data.area}</span> </p>
+      <p className="font-bold">Location : <span className="text-orange-300 font-semibold">{data.location}</span> </p>
+
       <div className="card-actions">
         <Link to={`/data/${data.id}`} className="btn btn-error text-orange-100">View Property</Link>
       </div>
