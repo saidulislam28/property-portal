@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import 'animate.css';
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -30,7 +31,18 @@ const Navbar = () => {
             background: isActive ? "#7600dc" : "",
           })}
         >
-          About Us
+          About
+        </NavLink>
+      </li>
+      <li className="mr-2 font-bold">
+        <NavLink
+          to="/support"
+          style={({ isActive }) => ({
+            color: isActive ? "#fff" : "",
+            background: isActive ? "#7600dc" : "",
+          })}
+        >
+          Support
         </NavLink>
       </li>
       {
@@ -76,8 +88,8 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a>
-          {" "}
+        <a className="animate__animated  animate__headShake">
+         
           <span className="text-lg md:text-2xl lg:text-3xl font-extrabold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient bg-300%">
             PropertyPortal
           </span>

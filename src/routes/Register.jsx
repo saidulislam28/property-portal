@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import {  toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from "../component/PageTitle";
+import { FaEyeSlash,FaEye } from 'react-icons/fa';
+
 
 const uppercaseRegex = /[A-Z]/;
   const lowercaseRegex = /[a-z]/;
@@ -12,6 +14,8 @@ const Register = () => {
 
 
 const {registerUser , updateProfileInfo} = useContext(AuthContext);
+
+const [showPassword, setShowPassword] =useState(false);
 
 
   const handleRegister = e =>{
@@ -23,16 +27,23 @@ const {registerUser , updateProfileInfo} = useContext(AuthContext);
     const photo = form.get('photo');
    
     
-    if(!uppercaseRegex.test(password)){
-      return alert('boro de')
-    }
-    if(!lowercaseRegex.test(password)){
-      return alert('choto de')
-    }
+
     if(password.length <6){
-      return alert('6 da hoy nai ')
+      return toast.error('Password must be at least 6 characters long.')
+     ;
   
     }
+
+    
+    if(!uppercaseRegex.test(password)){
+      return toast.error('Password must contain at least one uppercase letter.')
+      
+    }
+    if(!lowercaseRegex.test(password)){
+      return toast.error('Password must contain at least one lowercase letter.')
+     
+    }
+    
     
    
     
@@ -104,17 +115,27 @@ const {registerUser , updateProfileInfo} = useContext(AuthContext);
           required
         />
       </div>
-      <div className="form-control">
+      
+      
+      
+      
+      <div className="">
         <label className="label">
           <span className="label-text">Password</span>
         </label>
-        <input
-          type="password"
+       <div className="form-control relative">
+       <input
+          type={showPassword ? "text" : "password"}
           name="password"
           placeholder="password"
           className="input input-bordered"
           required
-        />
+        /> <span className="absolute top-4 right-2 text-xl cursor-pointer" onClick={()=>setShowPassword(!showPassword)}>  {
+          showPassword ? <FaEyeSlash /> : <FaEye />
+        }</span>
+       </div>
+
+
         <label className="label">
           <a href="#" className="label-text-alt link link-hover">
             Forgot password?

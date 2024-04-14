@@ -24,9 +24,14 @@ const UpdateProfile = () => {
   return (
     <div className="border-2 border-violet-700 rounded-xl mt-5 lg:mt-10 p-5 lg:p-10 w-full lg:w-96 mx-auto">
       <PageTitle title="pPortal-profile"></PageTitle>
+      <h1 className="font-bold text-4xl underline text-primary text-center my-5">My Profile</h1>
+
+      <img src={user.photoURL} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+      <h2 className="my-5 font-semibold text-center">
+        Email : {user.email}</h2>
 
       <form className="flex gap-5 flex-col justify-center items-center" onSubmit={handleUpdateProfile}>
-        <h1 className="font-bold text-4xl underline text-primary">My Profile</h1>
+        
         <div>
           <label>Your Name:</label>
           <input

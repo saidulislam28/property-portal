@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 const SlidingMarque = () => {
   return (
     <div className="container mx-auto">
-      <Marquee className="bg-black text-white" speed={150} pauseOnHover={true}>
+      <Marquee className="bg-black text-white rounded-xl" speed={150} pauseOnHover={true}>
         <div className="mr-10">
          New Season , New places : You cant miss.
         </div>

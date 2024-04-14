@@ -1,8 +1,12 @@
 const Gallery = () => {
   return (
-    <section className="py-6 container mx-auto border rounded-2xl mt-5 lg:mt-10">
+    <section className="container mx-auto border rounded-2xl mt-5 lg:mt-10">
 
-      <h2 className="text-2xl lg:text-4xl text-center font-bold">Some Of Our <br /> Collection is Here </h2>
+      <div className="border rounded-xl mb-5 bg-stone-200">
+      <h2 className="text-2xl lg:text-4xl text-center font-bold">Discover Our Collection</h2>
+      <p className="text-center font-semibold mt-5 opacity-50">Dive into our gallery and embark on a visual journey through <br />
+        landscapes, portraits, and moments frozen in time</p>
+      </div>
       <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4 mt-10">
         <img
           src="https://plus.unsplash.com/premium_photo-1661881436846-5a0f53025711?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
