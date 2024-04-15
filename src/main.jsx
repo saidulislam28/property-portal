@@ -14,6 +14,7 @@ import PrivateRoutes from "./routes/PrivateRoutes";
 import { ToastContainer } from "react-toastify";
 import Error from "./component/error/Error";
 import Support from "./routes/Support";
+import UserProfile from "./routes/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,15 @@ const router = createBrowserRouter([
             <UpdateProfile></UpdateProfile>
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "/userprofile",
+        element: (
+          <PrivateRoutes>
+            <UserProfile></UserProfile>
+          </PrivateRoutes>
+        ),
+
       },
       {
         path: "/login",

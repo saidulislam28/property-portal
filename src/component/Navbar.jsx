@@ -54,7 +54,20 @@ const Navbar = () => {
             background: isActive ? "#7600dc" : "",
           })}
         >
-          Profile
+         Update Profile
+        </NavLink>
+      </li> : ""
+      }
+      {
+        user ? <li className="font-bold">
+        <NavLink
+          to="/userprofile"
+          style={({ isActive }) => ({
+            color: isActive ? "#fff" : "",
+            background: isActive ? "#7600dc" : "",
+          })}
+        >
+         Profile
         </NavLink>
       </li> : ""
       }

@@ -50,8 +50,7 @@ const UpdateProfile = () => {
             className="input input-bordered w-full max-w-xs"
           />
         </div>
-        
-        <button type="submit" className="btn btn-secondary px-10">Update Profile</button>
+        <button type="submit" className="btn btn-primary px-10 text-xl">Save Changes</button>
       </form>
     </div>
   );

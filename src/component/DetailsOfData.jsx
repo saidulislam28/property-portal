@@ -17,7 +17,7 @@ const DetailsOfData = () => {
 
   console.log(facilityList);
 
-  // console.log(data);
+  
 
   const {
     estate_title,
@@ -27,8 +27,7 @@ const DetailsOfData = () => {
     area,
     status,
     location,
-    facilities,
-    image,
+     image,
   } = data;
 
   return (

@@ -6,17 +6,21 @@ import Gallery from "../component/Gallery";
 import SlidingMarque from "../component/SlidingMarque";
 import Discount from "../component/Discount";
 
+
 const Home = () => {
   const aData = useLoaderData();
 
+ 
   return (
     <div>
       <PageTitle title="pPortal-home"></PageTitle>
 
+      
+
       <Banner></Banner>
       <SlidingMarque></SlidingMarque>
 
-      <Gallery></Gallery>
+      
 
       <Discount></Discount>
 
@@ -37,6 +41,8 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      <Gallery></Gallery>
     </div>
   );
 };

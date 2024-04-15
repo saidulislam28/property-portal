@@ -3,7 +3,7 @@ import "animate.css";
 
 const About = () => {
   return (
-    <div className="shadow-xl rounded-xl">
+    <div className="shadow-xl rounded-xl min-h-[calc(100vh-410px)]">
       <PageTitle title="pPortal-about"></PageTitle>
       <h1 className="animate__animated animate__backInUp text-5xl text-center my-5 font-extrabold text-orange-400">
         About Me
