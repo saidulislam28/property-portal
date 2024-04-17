@@ -1,8 +1,19 @@
-# React + Vite
+# website name:  Property Portal.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Web live URL : https://property-portal-46225.web.app/  
 
-Currently, two official plugins are available:
+### Features and Characteristics:
+ 
+ * **Interactive Floor Plans**: Provide users with detailed floor plans of your retail space, allowing them to explore different sections and offerings.
+ *  **Virtual Tours** :  Offer virtual tours of your retail space, giving users a realistic sense of what to expect before visiting in person.
+ *  **Product Listings and Descriptions**: Showcase your products with high-quality images and detailed descriptions to help customers make informed purchasing decisions.
+ *  **Customer Reviews and Ratings**: Allow customers to leave reviews and ratings for products and overall shopping experience, fostering trust and transparency.
+ *  **Support** : Provide access to a dedicated support section where customers can find answers to frequently asked questions (FAQs), contact customer service
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+####  npm packages
+*Animate.css,
+*AOS Package,
+* React-leaflet,
+
+
