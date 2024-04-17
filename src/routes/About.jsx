@@ -3,6 +3,7 @@ import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Slider from "../component/Slider";
 
 const About = () => {
   useEffect(() => {
@@ -80,6 +81,19 @@ const About = () => {
           <button className="btn bg-orange-300 mt-5 px-20">Download CV</button>
         </div>
       </div>
+      
+
+        
+
+
+
+
+      <Slider></Slider>
+
+     
+
+
+      
     </div>
   );
 };
