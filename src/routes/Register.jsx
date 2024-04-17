@@ -1,16 +1,27 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import {  toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from "../component/PageTitle";
 import { FaEyeSlash,FaEye } from 'react-icons/fa';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 const uppercaseRegex = /[A-Z]/;
   const lowercaseRegex = /[a-z]/;
 
 const Register = () => {
+
+
+  useEffect(() => {
+    AOS.init({});
+
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
 
 
 const {registerUser , updateProfileInfo} = useContext(AuthContext);
@@ -72,6 +83,10 @@ const [showPassword, setShowPassword] =useState(false);
 
   return (
     <form
+    data-aos-duration="2000"
+          data-aos="slide-up"
+
+
      onSubmit={handleRegister}
       className=" md:w-3/4 lg:w-1/2 border rounded-2xl p-4 mx-auto my-10"
     >

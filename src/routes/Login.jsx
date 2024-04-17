@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
@@ -6,7 +6,22 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PageTitle from "../component/PageTitle";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+
 const Login = () => {
+
+  useEffect(() => {
+    AOS.init({});
+
+    return () => {
+      AOS.refresh();
+    };
+  }, []);
+
+
+
   const { LogIn, googleLogin,twitterLogin, githubLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -45,7 +60,10 @@ const Login = () => {
   } 
 
   return (
-    <div  className="md:w-3/4 lg:w-1/2 border rounded-2xl p-2 mx-auto my-10">
+    <div 
+    data-aos-duration="2000"
+          data-aos="slide-up"
+      className="md:w-3/4 lg:w-1/2 border rounded-2xl p-2 mx-auto my-10">
        <PageTitle title="pPortal-login"></PageTitle>
       <form
         onSubmit={handleLogin}>

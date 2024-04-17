@@ -70,15 +70,23 @@ const DetailsOfData = () => {
               Price :
               <span className="font-bold">    {price}</span>
             </h4>
-            
             <div className="divider"></div>
-            <ol className="flex list-none hover:list-disc justify-around mt-5">
+            
+            <ol className="flex  list-disc justify-around mt-5">
               {aFacility}
             </ol>
             <div className="divider"></div>
+           
             <p>
               <span className="font-bold">Details :</span> {description}
             </p>
+            <div className="divider"></div>
+            <button className="font-semibold btn btn-error text-white flex px-10">
+              Book now 
+              
+            </button>
+            
+            
             
 
             
