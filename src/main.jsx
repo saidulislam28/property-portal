@@ -41,7 +41,9 @@ const router = createBrowserRouter([
         element: <About></About>,
       },{
         path: "/support",
-        element:<Support></Support>
+        element:<PrivateRoutes>
+          <Support></Support>
+        </PrivateRoutes>
       },
       {
         path: "/profile",
